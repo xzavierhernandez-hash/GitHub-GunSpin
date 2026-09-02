@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-
 <html lang="en-us">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,6 +18,11 @@ href="https://cdn.jsdelivr.net/gh/organig-schools6/99@main/TemplateData/style.cs
 <script src="https://cdn.jsdelivr.net/gh/organig-schools6/99@main/Build/UnityLoader.js"></script>
 
 <style>
+
+/* =========================
+   PAGE
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -29,8 +34,9 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: black;
+    background: #000;
 }
+
 
 /* =========================
    UNITY GAME
@@ -50,7 +56,7 @@ body {
     max-width: 100vw;
     max-height: 100vh;
 
-    background: black;
+    background: #000;
 }
 
 
@@ -59,6 +65,7 @@ body {
 ========================= */
 
 #vaultButton {
+
     position: fixed;
 
     top: 12px;
@@ -69,22 +76,32 @@ body {
     padding: 10px 18px;
 
     background: #111;
-    color: white;
+    color: #fff;
 
     border: 2px solid #888;
     border-radius: 8px;
 
     font-family: Arial, sans-serif;
+
     font-size: 16px;
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.6);
+
+    transition:
+        background .15s,
+        transform .15s;
 }
 
 #vaultButton:hover {
     background: #292929;
+}
+
+#vaultButton:active {
+    transform: scale(.96);
 }
 
 
@@ -93,6 +110,7 @@ body {
 ========================= */
 
 #vault {
+
     display: none;
 
     position: fixed;
@@ -108,7 +126,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: rgba(0,0,0,0.85);
+    background:
+        rgba(0,0,0,.88);
 }
 
 
@@ -117,6 +136,7 @@ body {
 ========================= */
 
 #vaultBox {
+
     width: 360px;
     max-width: 90vw;
 
@@ -124,7 +144,7 @@ body {
 
     background: #151515;
 
-    color: white;
+    color: #fff;
 
     border: 2px solid #777;
     border-radius: 14px;
@@ -133,16 +153,28 @@ body {
 
     font-family: Arial, sans-serif;
 
-    box-shadow: 0 0 35px rgba(0,0,0,0.9);
+    box-shadow:
+        0 0 35px rgba(0,0,0,.9);
 }
 
+
+/* =========================
+   TITLE
+========================= */
+
 #vaultTitle {
+
     font-size: 30px;
+
+    font-weight: bold;
+
     margin-bottom: 8px;
 }
 
 #vaultDescription {
+
     color: #aaa;
+
     margin-bottom: 18px;
 }
 
@@ -152,19 +184,21 @@ body {
 ========================= */
 
 #codeDisplay {
+
     width: 100%;
     height: 55px;
 
     margin-bottom: 15px;
 
-    background: black;
+    background: #000;
 
     border: 2px solid #666;
     border-radius: 8px;
 
-    color: white;
+    color: #fff;
 
     font-family: monospace;
+
     font-size: 30px;
     font-weight: bold;
 
@@ -183,9 +217,11 @@ body {
 ========================= */
 
 #keypad {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 8px;
 
@@ -193,15 +229,20 @@ body {
 }
 
 .key {
+
     height: 52px;
 
-    border: 1px solid #666;
+    border:
+        1px solid #666;
+
     border-radius: 8px;
 
     background: #292929;
-    color: white;
+
+    color: #fff;
 
     font-size: 22px;
+
     font-weight: bold;
 
     cursor: pointer;
@@ -211,6 +252,10 @@ body {
     -webkit-user-select: none;
 
     touch-action: manipulation;
+
+    transition:
+        background .1s,
+        transform .1s;
 }
 
 .key:hover {
@@ -218,7 +263,10 @@ body {
 }
 
 .key:active {
-    transform: scale(0.96);
+
+    transform:
+        scale(.96);
+
     background: #555;
 }
 
@@ -231,39 +279,62 @@ body {
     background: #4a2222;
 }
 
+#clearKey:hover {
+    background: #632c2c;
+}
+
 #backKey {
     background: #333;
 }
 
+
+/* =========================
+   UNLOCK
+========================= */
+
 #unlockButton {
-    grid-column: span 3;
+
+    grid-column:
+        span 3;
 
     height: 48px;
 
     margin-top: 4px;
 
     border: 0;
+
     border-radius: 8px;
 
-    background: white;
-    color: black;
+    background: #fff;
+
+    color: #000;
 
     font-size: 17px;
+
     font-weight: bold;
 
     cursor: pointer;
+
+    transition:
+        background .15s,
+        transform .1s;
 }
 
 #unlockButton:hover {
     background: #ddd;
 }
 
+#unlockButton:active {
+    transform: scale(.98);
+}
+
 
 /* =========================
-   CLOSE BUTTON
+   CLOSE
 ========================= */
 
 #closeVault {
+
     width: 100%;
 
     height: 42px;
@@ -271,12 +342,15 @@ body {
     margin-top: 10px;
 
     border: 0;
+
     border-radius: 8px;
 
     background: #333;
-    color: white;
+
+    color: #fff;
 
     font-size: 15px;
+
     font-weight: bold;
 
     cursor: pointer;
@@ -292,12 +366,16 @@ body {
 ========================= */
 
 #vaultMessage {
+
     min-height: 28px;
 
     margin-top: 12px;
 
     font-size: 16px;
+
     font-weight: bold;
+
+    line-height: 28px;
 }
 
 .success {
@@ -308,23 +386,30 @@ body {
     color: #ff6666;
 }
 
+.warning {
+    color: #ffd15c;
+}
+
 
 /* =========================
-   CHROMEBOOK SIZE
+   MOBILE / CHROMEBOOK
 ========================= */
 
 @media (max-width: 800px) {
 
     #vaultButton {
+
         top: 7px;
         right: 7px;
 
-        padding: 8px 12px;
+        padding:
+            8px 12px;
 
         font-size: 13px;
     }
 
     #vaultBox {
+
         width: 330px;
 
         padding: 20px;
@@ -335,15 +420,22 @@ body {
     }
 
     #codeDisplay {
+
         height: 50px;
+
         line-height: 46px;
+
+        font-size: 26px;
     }
 }
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <!-- =========================
      UNITY GAME
@@ -351,13 +443,19 @@ body {
 
 <div id="unityContainer"></div>
 
+
 <!-- =========================
      VAULT BUTTON
 ========================= -->
 
-<button id="vaultButton" type="button">
+<button
+    id="vaultButton"
+    type="button">
+
     VAULT
+
 </button>
+
 
 <!-- =========================
      VAULT
@@ -365,81 +463,178 @@ body {
 
 <div id="vault">
 
-```
-<div id="vaultBox">
-
-    <div id="vaultTitle">
-        🔐 VAULT
-    </div>
-
-    <div id="vaultDescription">
-        Enter the secret code
-    </div>
+    <div id="vaultBox">
 
 
-    <!-- CODE DISPLAY -->
-
-    <div id="codeDisplay">
-        • • • •
-    </div>
+        <div id="vaultTitle">
+            🔐 VAULT
+        </div>
 
 
-    <!-- NUMBER KEYPAD -->
+        <div id="vaultDescription">
+            Enter the secret code
+        </div>
 
-    <div id="keypad">
 
-        <button class="key" data-number="1">1</button>
-        <button class="key" data-number="2">2</button>
-        <button class="key" data-number="3">3</button>
+        <!-- CODE -->
 
-        <button class="key" data-number="4">4</button>
-        <button class="key" data-number="5">5</button>
-        <button class="key" data-number="6">6</button>
+        <div id="codeDisplay">
+            • • • •
+        </div>
 
-        <button class="key" data-number="7">7</button>
-        <button class="key" data-number="8">8</button>
-        <button class="key" data-number="9">9</button>
 
-        <button class="key" id="clearKey">CLEAR</button>
-        <button class="key" data-number="0">0</button>
-        <button class="key" id="backKey">⌫</button>
+        <!-- KEYPAD -->
 
-        <button id="unlockButton">
-            UNLOCK
+        <div id="keypad">
+
+            <button
+                class="key"
+                data-number="1">
+                1
+            </button>
+
+            <button
+                class="key"
+                data-number="2">
+                2
+            </button>
+
+            <button
+                class="key"
+                data-number="3">
+                3
+            </button>
+
+
+            <button
+                class="key"
+                data-number="4">
+                4
+            </button>
+
+            <button
+                class="key"
+                data-number="5">
+                5
+            </button>
+
+            <button
+                class="key"
+                data-number="6">
+                6
+            </button>
+
+
+            <button
+                class="key"
+                data-number="7">
+                7
+            </button>
+
+            <button
+                class="key"
+                data-number="8">
+                8
+            </button>
+
+            <button
+                class="key"
+                data-number="9">
+                9
+            </button>
+
+
+            <button
+                class="key"
+                id="clearKey">
+                CLEAR
+            </button>
+
+            <button
+                class="key"
+                data-number="0">
+                0
+            </button>
+
+            <button
+                class="key"
+                id="backKey">
+                ⌫
+            </button>
+
+
+            <button
+                id="unlockButton"
+                type="button">
+
+                UNLOCK
+
+            </button>
+
+        </div>
+
+
+        <div id="vaultMessage"></div>
+
+
+        <button
+            id="closeVault"
+            type="button">
+
+            CLOSE
+
         </button>
 
+
     </div>
 
-
-    <div id="vaultMessage"></div>
-
-
-    <button id="closeVault">
-        CLOSE
-    </button>
-
 </div>
-```
 
-</div>
 
 <script>
 
-/* =========================
+
+/* =====================================================
    START UNITY
-========================= */
+===================================================== */
 
-window.gameInstance = UnityLoader.instantiate(
-    "unityContainer",
-    "https://cdn.jsdelivr.net/gh/organig-schools6/99@main/Build/GunSpin%20WebGL%20FinalVersion.json"
-);
+window.gameInstance = null;
 
 
-/* =========================
-   VAULT VARIABLES
-========================= */
+try {
 
-var vault = document.getElementById("vault");
+    window.gameInstance =
+        UnityLoader.instantiate(
+
+            "unityContainer",
+
+            "https://cdn.jsdelivr.net/gh/organig-schools6/99@main/Build/GunSpin%20WebGL%20FinalVersion.json",
+
+            {
+                onProgress:
+                    typeof UnityProgress === "function"
+                        ? UnityProgress
+                        : null
+            }
+
+        );
+
+} catch (error) {
+
+    console.error(
+        "Unity failed to start:",
+        error
+    );
+
+}
+
+
+/* =====================================================
+   VAULT ELEMENTS
+===================================================== */
+
+var vault =
+    document.getElementById("vault");
 
 var vaultButton =
     document.getElementById("vaultButton");
@@ -457,7 +652,9 @@ var vaultMessage =
     document.getElementById("vaultMessage");
 
 var numberButtons =
-    document.querySelectorAll("[data-number]");
+    document.querySelectorAll(
+        "[data-number]"
+    );
 
 var clearKey =
     document.getElementById("clearKey");
@@ -469,9 +666,9 @@ var backKey =
 var enteredCode = "";
 
 
-/* =========================
-   UPDATE DISPLAY
-========================= */
+/* =====================================================
+   UPDATE CODE
+===================================================== */
 
 function updateCodeDisplay() {
 
@@ -486,194 +683,393 @@ function updateCodeDisplay() {
 
     var display = "";
 
-    for (var i = 0; i < enteredCode.length; i++) {
+
+    for (
+        var i = 0;
+        i < enteredCode.length;
+        i++
+    ) {
 
         display += "●";
 
-        if (i < enteredCode.length - 1) {
+        if (
+            i <
+            enteredCode.length - 1
+        ) {
+
             display += " ";
+
         }
 
     }
 
 
-    codeDisplay.textContent = display;
+    codeDisplay.textContent =
+        display;
 }
 
 
-/* =========================
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(
+    text,
+    type
+) {
+
+    vaultMessage.textContent =
+        text;
+
+    vaultMessage.className =
+        type || "";
+
+}
+
+
+/* =====================================================
    OPEN VAULT
-========================= */
+===================================================== */
 
-vaultButton.addEventListener("click", function(event) {
+vaultButton.addEventListener(
+    "click",
+    function(event) {
 
-    event.preventDefault();
-    event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
-    enteredCode = "";
+        enteredCode = "";
 
-    updateCodeDisplay();
+        updateCodeDisplay();
 
-    vaultMessage.textContent = "";
-    vaultMessage.className = "";
+        showMessage(
+            "",
+            ""
+        );
 
-    vault.style.display = "flex";
+        vault.style.display =
+            "flex";
 
-});
+    }
+);
 
 
-/* =========================
+/* =====================================================
    NUMBER BUTTONS
-========================= */
+===================================================== */
 
-numberButtons.forEach(function(button) {
+numberButtons.forEach(
+    function(button) {
 
-    button.addEventListener("click", function(event) {
+        button.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+
+                if (
+                    enteredCode.length >= 4
+                ) {
+
+                    return;
+
+                }
+
+
+                enteredCode +=
+                    button.getAttribute(
+                        "data-number"
+                    );
+
+
+                updateCodeDisplay();
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   BACKSPACE
+===================================================== */
+
+backKey.addEventListener(
+    "click",
+    function(event) {
 
         event.preventDefault();
         event.stopPropagation();
 
 
-        if (enteredCode.length >= 4) {
-            return;
-        }
+        enteredCode =
+            enteredCode.slice(
+                0,
+                -1
+            );
 
-
-        enteredCode += button.getAttribute("data-number");
 
         updateCodeDisplay();
 
-    });
-
-});
-
-
-/* =========================
-   BACKSPACE
-========================= */
-
-backKey.addEventListener("click", function(event) {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    enteredCode =
-        enteredCode.slice(0, -1);
-
-    updateCodeDisplay();
-
-});
+    }
+);
 
 
-/* =========================
+/* =====================================================
    CLEAR
-========================= */
+===================================================== */
 
-clearKey.addEventListener("click", function(event) {
+clearKey.addEventListener(
+    "click",
+    function(event) {
 
-    event.preventDefault();
-    event.stopPropagation();
-
-    enteredCode = "";
-
-    updateCodeDisplay();
-
-    vaultMessage.textContent = "";
-    vaultMessage.className = "";
-
-});
+        event.preventDefault();
+        event.stopPropagation();
 
 
-/* =========================
-   UNLOCK
-========================= */
-
-unlockButton.addEventListener("click", function(event) {
-
-    event.preventDefault();
-    event.stopPropagation();
+        enteredCode = "";
 
 
-    if (enteredCode === "5812") {
-
-        vaultMessage.textContent =
-            "✓ BEST GUN UNLOCKED!";
-
-        vaultMessage.className =
-            "success";
+        updateCodeDisplay();
 
 
-        /*
-         * Send the code to Unity.
-         *
-         * This will only actually equip the gun if
-         * the Unity game contains a GameManager object
-         * with an UnlockBestGun method.
-         */
+        showMessage(
+            "",
+            ""
+        );
 
-        if (window.gameInstance) {
+    }
+);
 
-            try {
 
-                window.gameInstance.SendMessage(
-                    "GameManager",
-                    "UnlockBestGun",
-                    "5812"
-                );
+/* =====================================================
+   UNITY UNLOCK
+===================================================== */
 
-            } catch (error) {
+function sendUnlockToUnity() {
 
-                console.log(
-                    "Unity gun unlock method not found."
-                );
+    if (
+        !window.gameInstance
+    ) {
 
-            }
+        return false;
+
+    }
+
+
+    /*
+     * This is the Unity bridge.
+     *
+     * The names below MUST exist inside
+     * the Unity game for this to work.
+     */
+
+    try {
+
+        window.gameInstance.SendMessage(
+            "GameManager",
+            "UnlockBestGun",
+            "5812"
+        );
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            "Unity unlock error:",
+            error
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   UNLOCK BUTTON
+===================================================== */
+
+unlockButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+
+        /* WRONG CODE */
+
+        if (
+            enteredCode !== "5812"
+        ) {
+
+            showMessage(
+                "✕ WRONG CODE",
+                "error"
+            );
+
+            return;
 
         }
 
-    } else {
 
-        vaultMessage.textContent =
-            "✕ WRONG CODE";
+        /* CORRECT CODE */
 
-        vaultMessage.className =
-            "error";
+        var sent =
+            sendUnlockToUnity();
+
+
+        if (sent) {
+
+            showMessage(
+                "✓ VAULT CODE ACCEPTED",
+                "success"
+            );
+
+
+            /*
+             * Save the fact that the code
+             * was entered on this browser.
+             */
+
+            try {
+
+                localStorage.setItem(
+                    "gunspin_vault_unlocked",
+                    "true"
+                );
+
+            } catch (e) {}
+
+
+            /*
+             * Give Unity a moment to process
+             * the message.
+             */
+
+            setTimeout(
+                function() {
+
+                    showMessage(
+                        "✓ BEST GUN UNLOCK COMMAND SENT",
+                        "success"
+                    );
+
+                },
+                300
+            );
+
+
+        } else {
+
+            /*
+             * The page worked, but Unity did
+             * not accept the call.
+             */
+
+            showMessage(
+                "⚠ UNITY GUN DATA WAS NOT FOUND",
+                "warning"
+            );
+
+        }
 
     }
-
-});
-
-
-/* =========================
-   CLOSE VAULT
-========================= */
-
-closeVault.addEventListener("click", function(event) {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    vault.style.display = "none";
-
-});
+);
 
 
-/* =========================
+/* =====================================================
+   CLOSE
+===================================================== */
+
+closeVault.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        vault.style.display =
+            "none";
+
+    }
+);
+
+
+/* =====================================================
    ESCAPE
-========================= */
+===================================================== */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    if (
-        event.key === "Escape" &&
-        vault.style.display === "flex"
-    ) {
+        if (
+            event.key === "Escape" &&
+            vault.style.display === "flex"
+        ) {
 
-        vault.style.display = "none";
+            vault.style.display =
+                "none";
+
+        }
 
     }
+);
+
+
+/* =====================================================
+   PREVENT UNITY FROM RECEIVING VAULT KEYS
+===================================================== */
+
+[
+    vaultButton,
+    vault,
+    vaultBox
+].forEach(function(element) {
+
+    if (!element) {
+        return;
+    }
+
+    element.addEventListener(
+        "mousedown",
+        function(event) {
+
+            event.stopPropagation();
+
+        },
+        true
+    );
+
+    element.addEventListener(
+        "mouseup",
+        function(event) {
+
+            event.stopPropagation();
+
+        },
+        true
+    );
+
+    element.addEventListener(
+        "click",
+        function(event) {
+
+            event.stopPropagation();
+
+        },
+        true
+    );
 
 });
+
 
 </script>
 
